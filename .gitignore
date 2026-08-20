@@ -1,0 +1,17 @@
+target
+node_modules
+test-ledger
+.anchor
+dist
+.DS_Store
+.yarn
+
+# The program keypair is a SECRET, not a build artifact.
+#
+# Whoever holds it can deploy arbitrary code to our program address, including
+# after we have deployed. It lives under target/ (ignored above) and must be
+# backed up somewhere that is not this repository. Losing it means the program
+# can never be upgraded again; leaking it means someone else can upgrade it.
+#
+# The public key is fine to commit, and is in .program-id and Anchor.toml.
+*keypair.json

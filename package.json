@@ -1,0 +1,26 @@
+{
+  "name": "deploy-a-token-staking",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Fixed-pot SPL token staking with duration-weighted rewards",
+  "scripts": {
+    "test:unit": "cargo test --lib",
+    "test:deep": "PROPTEST_CASES=20000 cargo test --lib simulation",
+    "build": "anchor build",
+    "build:verifiable": "anchor build --verifiable"
+  },
+  "dependencies": {
+    "@anchor-lang/core": "1.1.2",
+    "@solana/spl-token": "^0.4.15",
+    "@solana/web3.js": "^1.98.4"
+  },
+  "devDependencies": {
+    "@types/bn.js": "^5.1.6",
+    "@types/chai": "^4.3.20",
+    "@types/mocha": "^10.0.10",
+    "chai": "^4.5.0",
+    "mocha": "^10.8.2",
+    "ts-mocha": "^10.1.0",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,22 @@
+[workspace]
+members = ["programs/*"]
+resolver = "2"
+
+# OVERFLOW-CHECKS IS NOT OPTIONAL HERE, AND IT IS NOT A DEFAULT.
+#
+# Cargo turns integer overflow checks OFF in release builds. Without this line a
+# multiplication that overflows wraps around silently and the program carries on
+# with a wrong number, which in this program means a wrong reward balance. It is
+# the single cheapest line in the repository: one setting, one whole class of
+# vulnerability closed.
+#
+# See docs/staking-program.md in the deploy-a-token repo, section 5.
+[profile.release]
+overflow-checks = true
+lto = "fat"
+codegen-units = 1
+
+[profile.release.build-override]
+opt-level = 3
+incremental = false
+codegen-units = 1

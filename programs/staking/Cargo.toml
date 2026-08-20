@@ -1,0 +1,32 @@
+[package]
+name = "deploy-a-token-staking"
+version = "0.1.0"
+description = "Fixed-pot SPL token staking with duration-weighted rewards"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "deploy_a_token_staking"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+
+[dependencies]
+anchor-lang = "1.1.2"
+anchor-spl = "1.1.2"
+
+[dev-dependencies]
+# The hand-rolled loops in math.rs cover the cases we thought of. This covers the
+# ones we did not: it generates thousands of arbitrary stake, claim and unstake
+# sequences and shrinks any failure to the smallest input that reproduces it.
+# For a program holding other people's tokens, "we tested the cases we imagined"
+# is not a strong enough claim.
+proptest = "1"
+# Only used by the fixture emitter in state.rs, which hands the frontend its
+# byte offsets. Not compiled into the program.
+base64 = "0.22"

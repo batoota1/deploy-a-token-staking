@@ -1,0 +1,7 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 0e00758dc955a79a227b98d4d730d3b71fe51336a28ce51e3c54040d7a73f7c5 # shrinks to reward_total = 424011649718967, lifetime = 53395115, max_weight = 1079885810, steps = [(2784069, Claim { which: 0 }), (724742, Claim { which: 0 }), (4045042, Stake { amount: 555222751, duration_frac: 107 }), (3649696, Stake { amount: 394117107, duration_frac: 52 }), (2855308, Claim { which: 0 }), (2226252, Claim { which: 0 }), (2286254, Claim { which: 0 }), (4103703, Claim { which: 0 }), (3790492, Stake { amount: 144682122, duration_frac: 1 }), (1913706, Unstake { which: 1 }), (40080, Stake { amount: 131812392, duration_frac: 40 }), (4449747, Unstake { which: 2 }), (65230, Claim { which: 0 }), (3116344, Unstake { which: 0 }), (1, Claim { which: 0 })]
